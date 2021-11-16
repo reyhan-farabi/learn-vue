@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+
+    <style>
+      .box {
+        background-color: palevioletred;
+        width: 200px;
+        height: 200px;
+      }
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Vue JS Basics</h1>
+
+    <div id="app" v-cloak>
+      <!-- v-cloak is to hide mustache -->
+      {{greeting}}
+
+      <!-- directives v-model -->
+      <input v-model="greeting" />
+      <!-- <div v-if="isVisible" class="box"></div> -->
+      <div v-show="isVisible" class="box"></div>
+    </div>
+
+    <!-- Vue JS CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- App JS Script -->
+    <script src="app.js"></script>
+  </body>
+</html>
