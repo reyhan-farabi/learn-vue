@@ -18,3 +18,14 @@ var app3 = new Vue({
     seen: true, // try to set the value to false
   },
 });
+
+var app4 = new Vue({
+  el: "#app-4",
+  data: {
+    todos: [
+      { text: "Learn Javascript" },
+      { text: "Learn Vue" },
+      { text: "Learn New Framework" },
+    ],
+  },
+});
