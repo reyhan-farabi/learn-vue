@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template Syntax - Interpolation</title>
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <h1>Template Syntax - Interpolation</h1>
+
+    <!-- App 1 Text-->
+    <span id="app-1">Message = {{msg}}</span>
+
+    <br />
+
+    <!-- App 2 Text-->
+    <!-- v-once will not update with any data change -->
+    <span id="app-2" v-once>{{msg}}</span>
+
+    <br />
+
+    <!-- App 3 Javascript Expression -->
+    <span id="app-3">{{msg.split('').reverse().join('')}} {{number + 2}}</span>
+
+    <script src="app.js"></script>
+  </body>
+</html>
