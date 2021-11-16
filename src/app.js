@@ -55,3 +55,22 @@ var app6 = new Vue({
     message: "Hello Vue",
   },
 });
+
+// Composing with Component
+// Defining todo-item component
+Vue.component("todo-item", {
+  props: ["todo"],
+  template: "<li>{{todo.text}}</li>",
+});
+
+// App 7
+var app7 = new Vue({
+  el: "#app-7",
+  data: {
+    groceryList: [
+      { id: 0, text: "Vegetables" },
+      { id: 1, text: "Fruit" },
+      { id: 2, text: "Chicken" },
+    ],
+  },
+});
