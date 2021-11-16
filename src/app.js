@@ -1,3 +1,4 @@
+// App 1
 var app = new Vue({
   el: "#app",
   data: {
@@ -5,6 +6,7 @@ var app = new Vue({
   },
 });
 
+// App 2
 var app2 = new Vue({
   el: "#app-2",
   data: {
@@ -12,6 +14,7 @@ var app2 = new Vue({
   },
 });
 
+// App 3
 var app3 = new Vue({
   el: "#app-3",
   data: {
@@ -19,6 +22,7 @@ var app3 = new Vue({
   },
 });
 
+// App 4
 var app4 = new Vue({
   el: "#app-4",
   data: {
@@ -30,3 +34,16 @@ var app4 = new Vue({
   },
 });
 // try to type app4.todos.push({text: 'Hello'}) in console
+
+// App 5
+var app5 = new Vue({
+  el: "#app-5",
+  data: {
+    message: "Hello Vue.js",
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split("").reverse().join("");
+    },
+  },
+});
