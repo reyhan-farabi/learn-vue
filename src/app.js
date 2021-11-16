@@ -29,3 +29,4 @@ var app4 = new Vue({
     ],
   },
 });
+// try to type app4.todos.push({text: 'Hello'}) in console
