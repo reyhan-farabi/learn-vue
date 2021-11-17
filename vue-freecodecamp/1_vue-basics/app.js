@@ -9,6 +9,9 @@ let app = Vue.createApp({
     toggleBox() {
       this.isVisible = !this.isVisible;
     },
+    greet() {
+      console.log(this.greeting);
+    },
   },
 });
 app.mount("#app");

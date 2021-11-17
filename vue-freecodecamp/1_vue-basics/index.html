@@ -26,7 +26,8 @@
       {{greeting}}
 
       <!-- directives v-model -->
-      <input v-model="greeting" />
+      <!-- for @keyup, we can also use keycode -->
+      <input @keyup.enter="greet" v-model="greeting" />
 
       <hr />
 
