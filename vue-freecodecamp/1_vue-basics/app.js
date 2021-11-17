@@ -2,8 +2,13 @@ let app = Vue.createApp({
   data: function () {
     return {
       greeting: "Hello using Vue 3",
-      isVisible: true, // try to change this to false
+      isVisible: false, // try to change this to true
     };
+  },
+  methods: {
+    toggleBox() {
+      this.isVisible = !this.isVisible;
+    },
   },
 });
 app.mount("#app");

@@ -27,8 +27,13 @@
 
       <!-- directives v-model -->
       <input v-model="greeting" />
-      <!-- <div v-if="isVisible" class="box"></div> -->
-      <div v-show="isVisible" class="box"></div>
+
+      <hr />
+
+      <button @click="toggleBox">Show Box</button>
+
+      <div v-if="isVisible" class="box"></div>
+      <!-- <div v-show="isVisible" class="box"></div> -->
     </div>
 
     <!-- Vue JS CDN -->
