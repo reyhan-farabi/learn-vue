@@ -19,22 +19,9 @@
   </head>
 
   <body>
-    <h1>Vue JS Basics</h1>
-
     <div id="app" v-cloak>
-      <!-- v-cloak is to hide mustache -->
-      {{greeting}}
-
-      <!-- directives v-model -->
-      <!-- for @keyup, we can also use keycode -->
-      <input @keyup.enter="greet(greeting)" v-model="greeting" />
-
-      <hr />
-
       <button @click="toggleBox">Show Box</button>
-
       <div v-if="isVisible" class="box"></div>
-      <!-- <div v-show="isVisible" class="box"></div> -->
     </div>
 
     <!-- Vue JS CDN -->
