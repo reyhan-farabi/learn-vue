@@ -21,7 +21,8 @@
   <body>
     <div id="app" v-cloak>
       <button @click="toggleBox">Show Box</button>
-      <div v-if="isVisible" class="box"></div>
+      <!-- <div v-if="isVisible" class="box"></div> -->
+      <test-box v-if="isVisible" />
     </div>
 
     <!-- Vue JS CDN -->
