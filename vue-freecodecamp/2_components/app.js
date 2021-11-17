@@ -21,8 +21,8 @@ app.component("login-form", {
     <form @submit.prevent='handleSubmit'>
       <h1>{{title}}</h1>
 
-      <custom-input type='email' v-bind:label='emailLabel'/>
-      <custom-input type='password' v-bind:label='passwordLabel'/>
+      <custom-input v-model='email' :label='emailLabel'/>
+      <custom-input v-model='password' :label='passwordLabel'/>
 
       <button>Log in</button>
     </form>
@@ -49,10 +49,26 @@ app.component("custom-input", {
   template: `
     <label>
       {{label}}
-      <input type='text'/>
+      <input type='text' v-model='inputValue'/>
     </label>
   `,
-  props: ["label"],
+  props: ["label", "modelValue"],
+  computed: {
+    inputValue: {
+      get() {
+        return this.modelValue;
+      },
+      set(value) {
+        // console.log(value);
+        this.$emit("update:modelValue", value);
+      },
+    },
+  },
+  // data() {
+  //   return {
+  //     inputValue: "",
+  //   };
+  // },
 });
 
 // mount app
