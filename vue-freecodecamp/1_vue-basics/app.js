@@ -9,8 +9,8 @@ let app = Vue.createApp({
     toggleBox() {
       this.isVisible = !this.isVisible;
     },
-    greet() {
-      console.log(this.greeting);
+    greet(greeting) {
+      console.log(greeting);
     },
   },
 });
