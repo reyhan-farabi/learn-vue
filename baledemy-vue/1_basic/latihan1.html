@@ -22,7 +22,17 @@
 
         <hr>
 
+        <button v-on:click='inputNum++'>+1</button>
         <span>Bilangan {{ inputNum }} adalah Bilangan <strong>{{ oddOrEven }}</strong></span>
+
+        <hr>
+
+        <button>Show Image</button>
+
+        <!-- <img v-bind:src="image"> -->
+        <div v-for='image in images'>
+            <img v-bind:src="image">
+        </div>
     </div>
 
     <!-- Vue js Link -->

@@ -5,7 +5,12 @@ const member = {
   qty: 1,
   firstname: "Reyhan",
   lastname: "Farabi",
-  inputNum: 7,
+  inputNum: 0,
+  images: [
+    "../assets/tech-coin-nuxt.png",
+    "../assets/tech-coin-vue.png",
+    "../assets/tech-coin-vuex.png",
+  ],
 };
 
 const vm = new Vue({
