@@ -1,3 +1,4 @@
+// header component
 Vue.component("header-component", {
   template: `
     <header>
@@ -14,6 +15,7 @@ Vue.component("header-component", {
   },
 });
 
+// footer component
 Vue.component("footer-component", {
   template: `
     <footer id="footer">
@@ -22,6 +24,7 @@ Vue.component("footer-component", {
     `,
 });
 
+// kelas component
 Vue.component("kelas-component", {
   template: `
     <main>
@@ -54,6 +57,14 @@ Vue.component("kelas-component", {
   },
 });
 
+// list component
+Vue.component("list-component", {
+  props: ["args"],
+  template: `
+        <li>{{ args }}</li>
+    `,
+});
+
 const member = {
   title: "Vue JS",
   subtitle: "This is my test comment",
@@ -70,14 +81,4 @@ const member = {
 const vm = new Vue({
   el: "#app",
   data: member,
-  methods: {
-    greet() {
-      alert(`Hi, ${this.fullname}`);
-    },
-  },
-  computed: {
-    fullname() {
-      return `Hello, ${this.firstname} ${this.lastname}`;
-    },
-  },
 });
