@@ -15,6 +15,7 @@ const member = {
   kelas: [],
   numbers: [1, 2, 3, 4, 5],
   isShowed: true,
+  textInput: "",
 };
 
 const vm = new Vue({
@@ -40,6 +41,10 @@ const vm = new Vue({
     },
     handleClick() {
       this.inputNum++;
+    },
+    handleSubmit(e) {
+      let text = e.target.value;
+      this.textInput = text;
     },
   },
   computed: {

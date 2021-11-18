@@ -34,6 +34,11 @@
             <button v-on:click='greet'>Click Me</button>
         </p>
 
+        <form>
+            <input type="text" v-model='subtitle'>
+            <button v-on:click.prevent=''>Input</button>
+        </form>
+
         <hr>
 
         <button v-on:click='handleClick'>+1</button>
@@ -69,11 +74,6 @@
             <li v-for='(k, index) in kelas'>{{ index + 1 }} - {{ k }}</li>
         </ul>
 
-        <form>
-            <input type="text" v-model='subtitle'>
-            <button v-on:click.prevent=''>Input</button>
-        </form>
-
         <hr>
 
         <h3>Perulangan</h3>
@@ -87,6 +87,14 @@
         <ul>
             <li v-for='i in getEvenNum()'>{{ i }}</li>
         </ul>
+
+        <hr>
+
+        <h2>{{ textInput }}</h2>
+        <form v-on:keyup.enter='handleSubmit'>
+            <input type="text">
+            <button v-on:click.prevent='handleSubmit'>Submit</button>
+        </form>
     </div>
 
     <!-- Vue js Link -->
