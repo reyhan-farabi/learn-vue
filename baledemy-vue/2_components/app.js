@@ -9,10 +9,9 @@ Vue.component("header-component", {
   data() {
     return {
       framework: "Vue JS",
-      firstname: "Reyhan",
-      lastname: "Farabi",
     };
   },
+  props: ["firstname", "lastname"],
 });
 
 // footer component
