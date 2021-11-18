@@ -11,5 +11,8 @@ const vm = new Vue({
     getName() {
       return "Hello, " + this.name;
     },
+    changeName(newName) {
+      this.name = newName;
+    },
   },
 });
