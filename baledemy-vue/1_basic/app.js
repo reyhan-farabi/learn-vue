@@ -13,6 +13,7 @@ const member = {
   ],
   menu: "home",
   kelas: [],
+  numbers: [1, 2, 3, 4, 5],
 };
 
 const vm = new Vue({
@@ -27,6 +28,11 @@ const vm = new Vue({
     },
     handleClick() {
       this.inputNum++;
+    },
+    getEvenNum() {
+      return this.numbers.filter((num) => {
+        return num % 2 == 0;
+      });
     },
   },
   computed: {
