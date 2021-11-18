@@ -2,6 +2,10 @@ const member = {
   title: "Vue JS",
   subtitle: "This is my test comment",
   name: "Reyhan",
+  qty: 1,
+  firstname: "Reyhan",
+  lastname: "Farabi",
+  inputNum: 7,
 };
 
 const vm = new Vue({
@@ -13,6 +17,21 @@ const vm = new Vue({
     },
     changeName(newName) {
       this.name = newName;
+    },
+  },
+  computed: {
+    totalBayar() {
+      return this.qty * 1000;
+    },
+    fullname() {
+      return `Hello, ${this.firstname} ${this.lastname}`;
+    },
+    oddOrEven() {
+      if (this.inputNum % 2 == 0) {
+        return "Genap";
+      } else {
+        return "Ganjil";
+      }
     },
   },
 });
