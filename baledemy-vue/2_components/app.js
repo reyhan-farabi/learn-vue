@@ -32,25 +32,20 @@ Vue.component("kelas-component", {
 
         <hr>
 
-        <h3>Daftar Kelas {{ kelas.length }}</h3>
-        <template v-if='kelas.length > 1'>
+        <h3>Daftar Kelas {{ args.length }}</h3>
+        <template v-if='args.length > 1'>
             <ul>
-                <li v-for='(item, index) of kelas'>{{ index + 1}} - {{ item }}</li>
+                <li v-for='(item, index) of args'>{{ index + 1}} - {{ item }}</li>
             </ul>
 
             <p v-else>Kelas tidak tersedia</p>
         </template>
     </main>
     `,
-  data() {
-    return {
-      kelas: ["Javascript", "Python"],
-      kelasbaru: "",
-    };
-  },
+  props: ["args", "kelasbaru"],
   methods: {
     submit() {
-      this.kelas.unshift(this.kelasbaru);
+      this.args.unshift(this.kelasbaru);
       this.kelasbaru = "";
     },
   },
@@ -79,5 +74,8 @@ const member = {
 
 const vm = new Vue({
   el: "#app",
-  data: member,
+  data: {
+    kelas: ["Javascript", "Python"],
+    kelasbaru: "",
+  },
 });
