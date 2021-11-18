@@ -35,6 +35,9 @@ const vm = new Vue({
         return num % 2 == 0;
       });
     },
+    greet() {
+      alert(`Hi, ${this.fullname}`);
+    },
   },
   computed: {
     totalBayar() {

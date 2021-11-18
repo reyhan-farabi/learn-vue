@@ -25,7 +25,10 @@
     <div id="app">
         <h1>{{ title }}</h1>
         <h3>{{ fullname }}</h3>
-        <p>{{ subtitle }}</p>
+        <p>
+            {{ subtitle }}
+            <button v-on:click='greet'>Click Me</button>
+        </p>
 
         <hr>
 
