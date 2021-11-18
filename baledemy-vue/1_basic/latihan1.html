@@ -11,6 +11,12 @@
         .body {
             margin: 5%;
         }
+
+        .active {
+            background-color: paleturquoise;
+            border: 0;
+            padding: 5px;
+        }
     </style>
 </head>
 
@@ -22,7 +28,7 @@
 
         <hr>
 
-        <button v-on:click='inputNum++'>+1</button>
+        <button v-on:click='handleClick'>+1</button>
         <span>Bilangan {{ inputNum }} adalah Bilangan <strong>{{ oddOrEven }}</strong></span>
 
         <hr>
@@ -33,6 +39,12 @@
         <div v-for='image in images'>
             <img v-bind:src="image">
         </div>
+
+        <hr>
+
+        <button v-bind:class="{active: menu === 'home'}">Home</button>
+        <button v-bind:class="{active: menu === 'about'}">About</button>
+        <button v-bind:class="{active: menu === 'blog'}">Blog</button>
     </div>
 
     <!-- Vue js Link -->

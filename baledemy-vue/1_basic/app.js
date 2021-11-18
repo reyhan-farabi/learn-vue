@@ -11,6 +11,7 @@ const member = {
     "../assets/tech-coin-vue.png",
     "../assets/tech-coin-vuex.png",
   ],
+  menu: "home",
 };
 
 const vm = new Vue({
@@ -22,6 +23,9 @@ const vm = new Vue({
     },
     changeName(newName) {
       this.name = newName;
+    },
+    handleClick() {
+      this.inputNum++;
     },
   },
   computed: {
