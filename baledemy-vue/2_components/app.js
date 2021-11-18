@@ -22,10 +22,36 @@ Vue.component("footer-component", {
     `,
 });
 
-Vue.component("my-list", {
+Vue.component("kelas-component", {
   template: `
-        <li>Test</li>
+    <main>
+        <h3>Tambah Kelas</h3>
+        <p><input type="text" placeholder="Nama Kelas" v-on:keyup.enter='submit' v-model='kelasbaru'></p>
+
+        <hr>
+
+        <h3>Daftar Kelas {{ kelas.length }}</h3>
+        <template v-if='kelas.length > 1'>
+            <ul>
+                <li v-for='(item, index) of kelas'>{{ index + 1}} - {{ item }}</li>
+            </ul>
+
+            <p v-else>Kelas tidak tersedia</p>
+        </template>
+    </main>
     `,
+  data() {
+    return {
+      kelas: ["Javascript", "Python"],
+      kelasbaru: "",
+    };
+  },
+  methods: {
+    submit() {
+      this.kelas.unshift(this.kelasbaru);
+      this.kelasbaru = "";
+    },
+  },
 });
 
 const member = {
