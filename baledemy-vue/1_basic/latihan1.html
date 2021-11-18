@@ -14,7 +14,8 @@
 
         .active {
             background-color: paleturquoise;
-            border: 0;
+            border: 1px solid black;
+            border-radius: 5px;
             padding: 5px;
         }
     </style>
@@ -42,9 +43,9 @@
 
         <hr>
 
-        <button v-bind:class="{active: menu === 'home'}">Home</button>
-        <button v-bind:class="{active: menu === 'about'}">About</button>
-        <button v-bind:class="{active: menu === 'blog'}">Blog</button>
+        <button v-bind:class="{active: menu === 'home'}" v-on:click="menu = 'home'">Home</button>
+        <button v-bind:class="{active: menu === 'about'}" v-on:click="menu = 'about'">About</button>
+        <button v-bind:class="{active: menu === 'blog'}" v-on:click="menu = 'blog'">Blog</button>
     </div>
 
     <!-- Vue js Link -->
