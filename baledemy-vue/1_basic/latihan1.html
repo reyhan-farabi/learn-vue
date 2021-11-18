@@ -37,9 +37,11 @@
         <button v-on:click='isShowed = !isShowed'>Show Image</button>
 
         <!-- <img v-bind:src="image"> -->
-        <div v-for='image in images' v-if='isShowed'>
-            <img v-bind:src="image">
+        <div v-if='isShowed'>
+            <img v-for='image in images' v-bind:src="image">
         </div>
+
+        <p v-else>Image is hidden</p>
 
         <hr>
 
