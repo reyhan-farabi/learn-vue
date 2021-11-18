@@ -46,6 +46,24 @@
         <button v-bind:class="{active: menu === 'home'}" v-on:click="menu = 'home'">Home</button>
         <button v-bind:class="{active: menu === 'about'}" v-on:click="menu = 'about'">About</button>
         <button v-bind:class="{active: menu === 'blog'}" v-on:click="menu = 'blog'">Blog</button>
+
+        <hr>
+
+        <p>
+            <label><input type="checkbox" value="Angular" v-model='kelas'>Angular</label>
+            <label><input type="checkbox" value="React" v-model='kelas'>React</label>
+            <label><input type="checkbox" value="Vue" v-model='kelas'>Vue</label>
+        </p>
+
+        <p>Pilihan kelas:</p>
+        <ul>
+            <li v-for='k in kelas'>{{ k }}</li>
+        </ul>
+
+        <form>
+            <input type="text" v-model='subtitle'>
+            <button v-on:click.prevent=''>Input</button>
+        </form>
     </div>
 
     <!-- Vue js Link -->

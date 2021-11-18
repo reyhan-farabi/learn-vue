@@ -12,6 +12,7 @@ const member = {
     "../assets/tech-coin-vuex.png",
   ],
   menu: "home",
+  kelas: [],
 };
 
 const vm = new Vue({
