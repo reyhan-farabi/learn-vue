@@ -27,9 +27,6 @@ const vm = new Vue({
     changeName(newName) {
       this.name = newName;
     },
-    handleClick() {
-      this.inputNum++;
-    },
     getEvenNum() {
       return this.numbers.filter((num) => {
         return num % 2 == 0;
@@ -37,6 +34,12 @@ const vm = new Vue({
     },
     greet() {
       alert(`Hi, ${this.fullname}`);
+    },
+    handleNav(navMenu) {
+      this.menu = navMenu;
+    },
+    handleClick() {
+      this.inputNum++;
     },
   },
   computed: {

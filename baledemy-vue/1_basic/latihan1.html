@@ -18,6 +18,10 @@
             border-radius: 5px;
             padding: 5px;
         }
+
+        a {
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -48,9 +52,9 @@
 
         <hr>
 
-        <button v-bind:class="{active: menu === 'home'}" v-on:click="menu = 'home'">Home</button>
-        <button v-bind:class="{active: menu === 'about'}" v-on:click="menu = 'about'">About</button>
-        <button v-bind:class="{active: menu === 'blog'}" v-on:click="menu = 'blog'">Blog</button>
+        <a href="#" v-bind:class="{active: menu === 'home'}" v-on:click.prevent="handleNav('home')">Home</a>
+        <a href="#" v-bind:class="{active: menu === 'about'}" v-on:click.prevent="handleNav('about')">About</a>
+        <a href="#" v-bind:class="{active: menu === 'blog'}" v-on:click.prevent="handleNav('blog')">Blog</a>
 
         <hr>
 
