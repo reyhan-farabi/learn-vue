@@ -57,13 +57,20 @@
 
         <p>Pilihan kelas:</p>
         <ul>
-            <li v-for='k in kelas'>{{ k }}</li>
+            <li v-for='(k, index) in kelas'>{{ index + 1 }} - {{ k }}</li>
         </ul>
 
         <form>
             <input type="text" v-model='subtitle'>
             <button v-on:click.prevent=''>Input</button>
         </form>
+
+        <hr>
+
+        <h3>Perulangan</h3>
+        <ul>
+            <li v-for='i in 5'>{{ i }}</li>
+        </ul>
     </div>
 
     <!-- Vue js Link -->
