@@ -27,11 +27,7 @@ const vm = new Vue({
       return `Hello, ${this.firstname} ${this.lastname}`;
     },
     oddOrEven() {
-      if (this.inputNum % 2 == 0) {
-        return "Genap";
-      } else {
-        return "Ganjil";
-      }
+      return this.inputNum % 2 === 0 ? "Genap" : "Ganjil";
     },
   },
 });
