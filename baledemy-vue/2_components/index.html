@@ -23,12 +23,25 @@
 
 <body>
     <div id="app">
-        <h1>{{ title }}</h1>
-        <h3>{{ fullname }}</h3>
-        <p>
-            {{ subtitle }}
-            <button v-on:click='greet'>Click Me</button>
-        </p>
+        <header-component></header-component>
+
+        <hr>
+
+        <main>
+            <p>
+                {{ subtitle }}
+                <button v-on:click='greet'>Click Me</button>
+            </p>
+
+            <ul>
+                <my-list v-for='i in 5'></my-list>
+            </ul>
+
+        </main>
+
+        <hr>
+
+        <footer-component></footer-component>
 
         <!-- Vue js Link -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
