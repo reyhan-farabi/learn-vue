@@ -34,10 +34,10 @@
 
         <hr>
 
-        <button>Show Image</button>
+        <button v-on:click='isShowed = !isShowed'>Show Image</button>
 
         <!-- <img v-bind:src="image"> -->
-        <div v-for='image in images'>
+        <div v-for='image in images' v-if='isShowed'>
             <img v-bind:src="image">
         </div>
 

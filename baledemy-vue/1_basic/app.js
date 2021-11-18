@@ -14,6 +14,7 @@ const member = {
   menu: "home",
   kelas: [],
   numbers: [1, 2, 3, 4, 5],
+  isShowed: true,
 };
 
 const vm = new Vue({
