@@ -17,7 +17,25 @@ const Kelas = {
   template: `
     <div>
         <h3>Tambah Kelas</h3>
-        <p><input type="text" placeholder="Nama Kelas" v-on:keyup.enter='submit' v-model='kelasbaru'></p>
+        <form>
+            <p><input type="text" placeholder="Nama Kelas"></p>
+
+            <p>
+            <div class="input-group">
+                <label>Deskripsi: </label><br>
+                <textarea></textarea>
+            </div>
+            <p>
+
+            <p>
+            <div class="input-group">
+                <label>Masukkan Gambar: </label><br>
+                <input type="file">
+            </div>
+            <p>
+
+            <button type="submit">Submit</button>
+        </form>
 
         <hr>
 
@@ -51,7 +69,7 @@ const routes = [
   { path: '/home', component: Home },
   { path: '/about', component: About },
   { path: '/kelas', component: Kelas },
-  { path: '/2_components', redirect: '/home' },
+  { path: '/2_components', redirect: '/kelas' },
 ]
 
 // declare router
