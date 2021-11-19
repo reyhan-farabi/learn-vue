@@ -22,8 +22,8 @@ const Kelas = {
         <hr>
 
         <h3>Daftar Kelas - {{ args.length }}</h3>
-        <template v-if='args.length >= 1'>
-            <ul>
+        <template>
+            <ul v-if='args.length >= 1'>
                 <li v-for='(item, index) of args'>
                   {{ index + 1}}) {{ item.judul }} 
                   - 
@@ -129,8 +129,8 @@ const vm = new Vue({
     kelasbaru: "",
   },
   methods: {
-    hapuskelas(index) {
-      this.kelas.splice(index, 1)
+    hapuskelas(id) {
+      this.kelas = this.kelas.filter(item => item.id != id)
     }
   },
 });
