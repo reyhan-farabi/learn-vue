@@ -17,6 +17,11 @@ ul li {
   list-style: none;
 }
 
-/* .input-group {
-  margin: 10px;
-} */
+.input-group {
+  margin: 10px 0;
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+}

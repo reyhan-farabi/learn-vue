@@ -18,22 +18,22 @@ const Kelas = {
     <div>
         <h3>Tambah Kelas</h3>
         <form v-on:submit.prevent='submitkelas'>
-            <p><input v-model='kelas.judul' type="text" placeholder="Nama Kelas"></p>
+            <div class='input-group'>
+              <input v-model='kelas.judul' type="text" placeholder="Nama Kelas">
+              <span class='error' v-if='error.judul'>{{ error.judul }}</span>
+            </div>
 
-            <p>
             <div class="input-group">
                 <label>Deskripsi: </label><br>
                 <textarea v-model='kelas.deskripsi'></textarea>
+                <span class='error' v-if='error.deskripsi'>{{ error.deskripsi }}</span>
             </div>
-            <p>
 
-            <p>
             <div class="input-group">
                 <img v-bind:src='previewImg' v-if='previewImg' width='256px'><br/>
                 <label>Masukkan Gambar: </label><br>
                 <input ref='gambar' v-on:change='uploadImage' type="file">
             </div>
-            <p>
 
             <button type="submit">Submit</button>
         </form>
@@ -64,11 +64,23 @@ const Kelas = {
         deskripsi: '',
         gambar: ''
       },
-      previewImg: ''
+      previewImg: '',
+      error: {
+        judul: '',
+        deskripsi: ''
+      }
     }
   },
   methods: {
     submitkelas() {
+      if (this.kelas.judul == '') {
+        this.error.judul = 'Judul is required'
+      }
+
+      if (this.kelas.deskripsi == '') {
+        this.error.deskripsi = 'Deskripsi is required'
+      }
+
       const data = {
         id: uuidv4(),
         judul: this.kelas.judul,
