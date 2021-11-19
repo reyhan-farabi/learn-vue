@@ -1,5 +1,3 @@
-Vue.config.devtools = true
-
 // declare home
 const Home = { template: '<h2>Welcome to Vue JS</h2>' };
 
@@ -19,7 +17,7 @@ const Kelas = {
   template: `
     <div>
         <h3>Tambah Kelas</h3>
-        <form v-on:submit.prevent='submit'>
+        <form v-on:submit.prevent='submitkelas'>
             <p><input v-model='kelas.judul' type="text" placeholder="Nama Kelas"></p>
 
             <p>
@@ -68,8 +66,15 @@ const Kelas = {
     }
   },
   methods: {
-    submit() {
-      console.log(this.kelas);
+    submitkelas() {
+      const data = {
+        id: uuidv4(),
+        judul: this.kelas.judul,
+        deskripsi: this.kelas.deskripsi,
+        gambar: null
+      }
+
+      this.$emit('submitkelas', data)
     },
   },
 };
@@ -159,6 +164,10 @@ const vm = new Vue({
   methods: {
     hapuskelas(id) {
       this.kelas = this.kelas.filter(item => item.id != id)
+    },
+    submitkelas(data) {
+      console.log(data);
+      // this.kelas.push(data)
     }
   },
 });

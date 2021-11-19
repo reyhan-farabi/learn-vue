@@ -30,7 +30,8 @@
 
         <main>
             <home></home>
-            <router-view v-bind:args='kelas' v-on:hapuskelas='hapuskelas'></router-view>
+            <router-view v-bind:args='kelas' v-on:submitkelas='submitkelas' v-on:hapuskelas='hapuskelas'>
+            </router-view>
         </main>
 
 
@@ -53,6 +54,9 @@
         <!-- Vue js Link -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
         <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+        <!-- UUID Link -->
+        <script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
 
         <!-- JS Link -->
         <script src="app.js"></script>
