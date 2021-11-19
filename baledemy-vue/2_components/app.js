@@ -81,20 +81,23 @@ const Kelas = {
         this.error.deskripsi = 'Deskripsi is required'
       }
 
-      const data = {
-        id: uuidv4(),
-        judul: this.kelas.judul,
-        deskripsi: this.kelas.deskripsi,
-        gambar: null
+      if (this.kelas.judul && this.kelas.deskripsi) {
+        const data = {
+          id: uuidv4(),
+          judul: this.kelas.judul,
+          deskripsi: this.kelas.deskripsi,
+          gambar: null
+        }
+
+        this.$emit('submitkelas', data)
+
+        this.kelas.judul = ''
+        this.kelas.deskripsi = ''
+        this.kelas.gambar = ''
+        this.previewImg = ''
+        this.$refs.gambar.value = ''
+
       }
-
-      this.$emit('submitkelas', data)
-
-      this.kelas.judul = ''
-      this.kelas.deskripsi = ''
-      this.kelas.gambar = ''
-      this.previewImg = ''
-      this.$refs.gambar.value = ''
     },
     uploadImage(event) {
       const imgName = event.target.files[0].name;
