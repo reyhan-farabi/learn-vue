@@ -9,6 +9,7 @@
   "author": "M. Reyhan Farabi",
   "license": "ISC",
   "dependencies": {
+    "http-server": "^14.0.0",
     "uuid": "^8.3.2"
   }
 }

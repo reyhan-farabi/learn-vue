@@ -31,7 +31,7 @@ const Kelas = {
             <div class="input-group">
                 <img v-bind:src='previewImg' v-if='previewImg' width='256px'><br/>
                 <label>Masukkan Gambar: </label><br>
-                <input v-on:change='uploadImage' type="file">
+                <input ref='gambar' v-on:change='uploadImage' type="file">
             </div>
             <p>
 
@@ -44,7 +44,7 @@ const Kelas = {
         <template>
             <ul v-if='args.length >= 1'>
                 <li v-for='(item, index) of args'>
-                  {{ index + 1}}) {{ item.judul }} 
+                  {{ index + 1}}) {{ item.judul }}
                   - 
                   {{ item.deskripsi }}
                   - 
@@ -80,6 +80,9 @@ const Kelas = {
 
       this.kelas.judul = ''
       this.kelas.deskripsi = ''
+      this.kelas.gambar = ''
+      this.previewImg = ''
+      this.$refs.gambar.value = ''
     },
     uploadImage(event) {
       const imgName = event.target.files[0].name;
@@ -89,12 +92,20 @@ const Kelas = {
   },
 };
 
+// declare notfound
+const NotFound = {
+  template: `
+    <h1>404 Page Not Found</h1>
+  `
+}
+
 // declare routes
 const routes = [
-  { path: '/home', component: Home },
+  { path: '/', component: Home },
   { path: '/about', component: About },
   { path: '/kelas', component: Kelas },
-  { path: '/2_components', redirect: '/kelas' },
+  { path: '*', component: NotFound },
+  // { path: '/2_components', redirect: '/kelas' },
 ]
 
 // declare router
