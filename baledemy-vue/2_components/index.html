@@ -27,24 +27,17 @@
 
         <nav>
             <router-link to='/'>Home</router-link>
-            <router-link to='/about'>About</router-link>
-            <router-link to='/blog'>Blog</router-link>
             <router-link to='/kelas'>Kelas</router-link>
+            <router-link to='/about'>About</router-link>
         </nav>
 
         <hr>
 
         <main>
-            <!-- <kelas-component ></kelas-component> -->
             <home></home>
             <router-view v-bind:args='kelas' v-on:hapuskelas='hapuskelas'></router-view>
         </main>
 
-        <hr>
-
-        <footer-component>
-            <p>Copyright 2021 - M. Reyhan Farabi</p>
-        </footer-component>
 
         <hr>
 
@@ -58,10 +51,9 @@
 
         <hr>
 
-        <div>Hello World</div>
-        <button>
-            Enlarge Text
-        </button>
+        <footer-component>
+            <p>Copyright 2021 - M. Reyhan Farabi</p>
+        </footer-component>
 
         <!-- Vue js Link -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>

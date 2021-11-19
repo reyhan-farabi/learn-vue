@@ -1,7 +1,17 @@
-// declare page
-const Home = { template: '<div>Home</div>' };
-const About = { template: '<div>About</div>' };
-const Blog = { template: '<div>Blog</div>' };
+// declare home
+const Home = { template: '<h2>Welcome to Vue JS</h2>' };
+
+// declare about
+const About = {
+  template: `
+  <div>
+    <h3>About</h3>
+
+    <p>This is a Vue JS Single Page App</p>
+  </div>
+  `
+};
+
 const Kelas = {
   template: `
     <div>
@@ -10,7 +20,7 @@ const Kelas = {
 
         <hr>
 
-        <h3>Daftar Kelas {{ args.length }}</h3>
+        <h3>Daftar Kelas - {{ args.length }}</h3>
         <template v-if='args.length >= 1'>
             <ul>
                 <li v-for='(item, index) of args'>
@@ -37,7 +47,6 @@ const Kelas = {
 const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
-  { path: '/blog', component: Blog },
   { path: '/kelas', component: Kelas }
 ]
 
@@ -50,7 +59,7 @@ const router = new VueRouter({
 Vue.component("header-component", {
   template: `
     <header>
-        <h1>Welcome to {{ framework }}</h1>
+        <h1>{{ framework }} Single Page App</h1>
         <h3>Hi, {{ firstname }} {{ lastname }}</h3>
     </header>
     `,
@@ -70,11 +79,6 @@ Vue.component("footer-component", {
     </footer>
     `,
 });
-
-// kelas component
-// Vue.component("kelas-component", {
-
-// });
 
 // list component
 Vue.component("list-component", {
