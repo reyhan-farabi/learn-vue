@@ -1,3 +1,5 @@
+Vue.config.devtools = true
+
 // declare home
 const Home = { template: '<h2>Welcome to Vue JS</h2>' };
 
@@ -17,20 +19,20 @@ const Kelas = {
   template: `
     <div>
         <h3>Tambah Kelas</h3>
-        <form>
-            <p><input type="text" placeholder="Nama Kelas"></p>
+        <form v-on:submit.prevent='submit'>
+            <p><input v-model='kelas.judul' type="text" placeholder="Nama Kelas"></p>
 
             <p>
             <div class="input-group">
                 <label>Deskripsi: </label><br>
-                <textarea></textarea>
+                <textarea v-model='kelas.deskripsi'></textarea>
             </div>
             <p>
 
             <p>
             <div class="input-group">
                 <label>Masukkan Gambar: </label><br>
-                <input type="file">
+                <input v-model='kelas.gambar' type="file">
             </div>
             <p>
 
@@ -56,10 +58,18 @@ const Kelas = {
     </div>
     `,
   props: ["args", "kelasbaru"],
+  data() {
+    return {
+      kelas: {
+        judul: '',
+        deskripsi: '',
+        gambar: ''
+      }
+    }
+  },
   methods: {
     submit() {
-      this.args.unshift(this.kelasbaru);
-      this.kelasbaru = "";
+      console.log(this.kelas);
     },
   },
 };
