@@ -29,8 +29,9 @@ const Kelas = {
 
             <p>
             <div class="input-group">
+                <img v-bind:src='previewImg' v-if='previewImg' width='256px'><br/>
                 <label>Masukkan Gambar: </label><br>
-                <input v-model='kelas.gambar' type="file">
+                <input v-on:change='uploadImage' type="file">
             </div>
             <p>
 
@@ -62,7 +63,8 @@ const Kelas = {
         judul: '',
         deskripsi: '',
         gambar: ''
-      }
+      },
+      previewImg: ''
     }
   },
   methods: {
@@ -75,7 +77,15 @@ const Kelas = {
       }
 
       this.$emit('submitkelas', data)
+
+      this.kelas.judul = ''
+      this.kelas.deskripsi = ''
     },
+    uploadImage(event) {
+      const imgName = event.target.files[0].name;
+      this.kelas.gambar = imgName;
+      this.previewImg = URL.createObjectURL(event.target.files[0])
+    }
   },
 };
 
