@@ -21,11 +21,11 @@ Vue.component("header-component", {
   props: ["firstname", "lastname"],
 });
 
-// footer component
+// footer component (slot)
 Vue.component("footer-component", {
   template: `
     <footer id="footer">
-        <p>Copyright 2021 - M. Reyhan Farabi</p>
+        <slot></slot>
     </footer>
     `,
 });
