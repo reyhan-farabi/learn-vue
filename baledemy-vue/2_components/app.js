@@ -12,6 +12,7 @@ const About = {
   `
 };
 
+// declare kelas
 const Kelas = {
   template: `
     <div>
@@ -24,9 +25,11 @@ const Kelas = {
         <template v-if='args.length >= 1'>
             <ul>
                 <li v-for='(item, index) of args'>
-                  {{ index + 1}} - {{ item }} 
+                  {{ index + 1}}) {{ item.judul }} 
                   - 
-                  <a href='' v-on:click.prevent='$emit("hapuskelas", index)'>hapus</a>
+                  {{ item.deskripsi }}
+                  - 
+                  <a href='' v-on:click.prevent='$emit("hapuskelas", item.id)'>hapus</a>
                 </li>
             </ul>
 
@@ -45,9 +48,10 @@ const Kelas = {
 
 // declare routes
 const routes = [
-  { path: '/', component: Home },
+  { path: '/home', component: Home },
   { path: '/about', component: About },
-  { path: '/kelas', component: Kelas }
+  { path: '/kelas', component: Kelas },
+  { path: '/2_components', redirect: '/home' },
 ]
 
 // declare router
@@ -109,7 +113,19 @@ const vm = new Vue({
     'home': Home,
   },
   data: {
-    kelas: ["Javascript", "Python"],
+    kelas: [
+      {
+        id: 1,
+        judul: 'VueJS',
+        deskripsi: 'The Progressive Javascript Framework'
+      },
+      {
+        id: 2,
+        judul: 'ReactJS',
+        deskripsi: 'A Javascript Library for Building User Interfaces'
+      }
+
+    ],
     kelasbaru: "",
   },
   methods: {

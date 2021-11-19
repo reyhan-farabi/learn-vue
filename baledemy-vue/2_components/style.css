@@ -12,3 +12,7 @@ html {
   border-radius: 5px;
   padding: 5px;
 }
+
+ul li {
+  list-style: none;
+}
