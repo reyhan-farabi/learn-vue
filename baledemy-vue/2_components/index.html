@@ -25,10 +25,20 @@
     <div id="app">
         <header-component firstname='Reyhan' lastname='Farabi'></header-component>
 
+        <nav>
+            <router-link to='/'>Home</router-link>
+            <router-link to='/about'>About</router-link>
+            <router-link to='/blog'>Blog</router-link>
+            <router-link to='/kelas'>Kelas</router-link>
+        </nav>
+
         <hr>
 
-        <kelas-component v-bind:args='kelas' v-on:hapuskelas='hapuskelas'></kelas-component>
-        <home></home>
+        <main>
+            <!-- <kelas-component ></kelas-component> -->
+            <home></home>
+            <router-view v-bind:args='kelas' v-on:hapuskelas='hapuskelas'></router-view>
+        </main>
 
         <hr>
 
@@ -55,6 +65,7 @@
 
         <!-- Vue js Link -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
         <!-- JS Link -->
         <script src="app.js"></script>

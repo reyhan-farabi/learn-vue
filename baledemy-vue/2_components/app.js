@@ -1,9 +1,50 @@
-// declare home
-const Home = {
+// declare page
+const Home = { template: '<div>Home</div>' };
+const About = { template: '<div>About</div>' };
+const Blog = { template: '<div>Blog</div>' };
+const Kelas = {
   template: `
-    <div>Home</div>
-  `,
+    <div>
+        <h3>Tambah Kelas</h3>
+        <p><input type="text" placeholder="Nama Kelas" v-on:keyup.enter='submit' v-model='kelasbaru'></p>
+
+        <hr>
+
+        <h3>Daftar Kelas {{ args.length }}</h3>
+        <template v-if='args.length >= 1'>
+            <ul>
+                <li v-for='(item, index) of args'>
+                  {{ index + 1}} - {{ item }} 
+                  - 
+                  <a href='' v-on:click.prevent='$emit("hapuskelas", index)'>hapus</a>
+                </li>
+            </ul>
+
+            <p v-else>Kelas tidak tersedia</p>
+        </template>
+    </div>
+    `,
+  props: ["args", "kelasbaru"],
+  methods: {
+    submit() {
+      this.args.unshift(this.kelasbaru);
+      this.kelasbaru = "";
+    },
+  },
 };
+
+// declare routes
+const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+  { path: '/blog', component: Blog },
+  { path: '/kelas', component: Kelas }
+]
+
+// declare router
+const router = new VueRouter({
+  routes
+})
 
 // header component
 Vue.component("header-component", {
@@ -31,36 +72,9 @@ Vue.component("footer-component", {
 });
 
 // kelas component
-Vue.component("kelas-component", {
-  template: `
-    <main>
-        <h3>Tambah Kelas</h3>
-        <p><input type="text" placeholder="Nama Kelas" v-on:keyup.enter='submit' v-model='kelasbaru'></p>
+// Vue.component("kelas-component", {
 
-        <hr>
-
-        <h3>Daftar Kelas {{ args.length }}</h3>
-        <template v-if='args.length >= 1'>
-            <ul>
-                <li v-for='(item, index) of args'>
-                  {{ index + 1}} - {{ item }} 
-                  - 
-                  <a href='' v-on:click.prevent='$emit("hapuskelas", index)'>hapus</a>
-                </li>
-            </ul>
-
-            <p v-else>Kelas tidak tersedia</p>
-        </template>
-    </main>
-    `,
-  props: ["args", "kelasbaru"],
-  methods: {
-    submit() {
-      this.args.unshift(this.kelasbaru);
-      this.kelasbaru = "";
-    },
-  },
-});
+// });
 
 // list component
 Vue.component("list-component", {
@@ -85,6 +99,7 @@ const member = {
 
 const vm = new Vue({
   el: "#app",
+  router,
   component: {
     'home': Home,
   },
