@@ -166,8 +166,8 @@ const vm = new Vue({
       this.kelas = this.kelas.filter(item => item.id != id)
     },
     submitkelas(data) {
-      console.log(data);
-      // this.kelas.push(data)
+      // console.log(data);
+      this.kelas.push(data)
     }
   },
 });
