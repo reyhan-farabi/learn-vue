@@ -1,3 +1,10 @@
+// declare home
+const Home = {
+  template: `
+    <div>Home</div>
+  `,
+};
+
 // header component
 Vue.component("header-component", {
   template: `
@@ -33,9 +40,13 @@ Vue.component("kelas-component", {
         <hr>
 
         <h3>Daftar Kelas {{ args.length }}</h3>
-        <template v-if='args.length > 1'>
+        <template v-if='args.length >= 1'>
             <ul>
-                <li v-for='(item, index) of args'>{{ index + 1}} - {{ item }}</li>
+                <li v-for='(item, index) of args'>
+                  {{ index + 1}} - {{ item }} 
+                  - 
+                  <a href='' v-on:click.prevent='$emit("hapuskelas", index)'>hapus</a>
+                </li>
             </ul>
 
             <p v-else>Kelas tidak tersedia</p>
@@ -74,8 +85,16 @@ const member = {
 
 const vm = new Vue({
   el: "#app",
+  component: {
+    'home': Home,
+  },
   data: {
     kelas: ["Javascript", "Python"],
     kelasbaru: "",
+  },
+  methods: {
+    hapuskelas(index) {
+      this.kelas.splice(index, 1)
+    }
   },
 });

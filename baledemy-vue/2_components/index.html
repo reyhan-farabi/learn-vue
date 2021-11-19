@@ -27,7 +27,8 @@
 
         <hr>
 
-        <kelas-component v-bind:args='kelas'></kelas-component>
+        <kelas-component v-bind:args='kelas' v-on:hapuskelas='hapuskelas'></kelas-component>
+        <home></home>
 
         <hr>
 
@@ -42,6 +43,13 @@
             <list-component args='Tyler'></list-component>
             <list-component args='Steve'></list-component>
         </ul>
+
+        <hr>
+
+        <div>Hello World</div>
+        <button>
+            Enlarge Text
+        </button>
 
         <!-- Vue js Link -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
