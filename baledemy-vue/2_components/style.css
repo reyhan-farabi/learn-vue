@@ -1,0 +1,14 @@
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.body {
+  margin: 5%;
+}
+
+.active {
+  background-color: paleturquoise;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
